@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. Sınıf Almanca | Die Freundschaft - 100 Soru Test</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f0f9ff 50%, #fdf2f8 100%);
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 30px 20px 20px;
+        }
+
+        .header h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+
+        .header .subtitle {
+            font-size: 1.05rem;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-top: 10px;
+        }
+
+        /* Progress */
+        .progress-wrap {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--muted);
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: var(--border);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #818cf8);
+            border-radius: 999px;
+            transition: width 0.35s ease;
+            width: 0%;
+        }
+
+        /* Question Card */
+        .question-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 28px 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .q-number {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .q-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+            color: var(--text);
+            line-height: 1.45;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            border: 2px solid var(--border);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #f8fafc;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .option:hover {
+            border-color: var(--primary);
+            background: #eef2ff;
+        }
+
+        .option.selected {
+            border-color: var(--primary);
+            background: #e0e7ff;
+        }
+
+        .option.correct {
+            border-color: var(--success);
+            background: #d1fae5;
+        }
+
+        .option.wrong {
+            border-color: var(--danger);
+            background: #fee2e2;
+        }
+
+        .option-letter {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            color: var(--muted);
+        }
+
+        .option.selected .option-letter {
+            background: var(--primary);
+            color: white;
+        }
+
+        .option.correct .option-letter {
+            background: var(--success);
+            color: white;
+        }
+
+        .option.wrong .option-letter {
+            background: var(--danger);
+            color: white;
+        }
+
+        /* Buttons */
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:disabled {
+            background: #a5b4fc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e1;
+        }
+
+        /* Result Screen */
+        .result-card {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 40px 28px;
+            text-align: center;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .result-card.show {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #818cf8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: white;
+            box-shadow: 0 8px 24px rgba(79,70,229,0.3);
+        }
+
+        .score-circle .big {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .score-circle .small {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .result-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .result-msg {
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-bottom: 28px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .stat {
+            background: #f1f5f9;
+            border-radius: 14px;
+            padding: 16px 10px;
+        }
+
+        .stat .num {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat .label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        /* Start Screen */
+        .start-card {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 40px 28px;
+            text-align: center;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+        }
+
+        .start-card h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+        }
+
+        .start-card p {
+            color: var(--muted);
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .topics {
+            text-align: left;
+            background: #f8fafc;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin: 24px 0;
+            font-size: 0.95rem;
+        }
+
+        .topics li {
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        /* Feedback */
+        .feedback {
+            margin-top: 16px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .feedback.wrong {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Responsive */
+        @media (max-width: 560px) {
+            .header h1 { font-size: 1.5rem; }
+            .q-text { font-size: 1.1rem; }
+            .stats { grid-template-columns: 1fr; }
+            .btn { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🇩🇪 Die Freundschaft</h1>
+            <div class="subtitle">7. Sınıf Almanca • 1. Ünite</div>
+            <div class="badge">100 Soru • A1.2</div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-card">
+            <h2>Arkadaşlık Ünitesi Testi</h2>
+            <p>Bu test sadece <strong>Die Freundschaft</strong> ünitesini kapsar.</p>
+            <ul class="topics">
+                <li>• En iyi arkadaşımı tanıtma</li>
+                <li>• Fiziksel görünüm (saç, göz, boy, beden)</li>
+                <li>• Karakter özellikleri</li>
+                <li>• Possessivpronomen (mein / dein / sein / ihr)</li>
+            </ul>
+            <p style="margin-bottom:24px;color:var(--muted);font-size:0.95rem;">Her soru 1 puandır. Toplam 100 puan.</p>
+            <button class="btn btn-primary" onclick="startQuiz()" style="max-width:280px;margin:0 auto;">
+                Teste Başla 🚀
+            </button>
+        </div>
+
+        <!-- Quiz Area -->
+        <div id="quizArea" style="display:none;">
+            <div class="progress-wrap">
+                <div class="progress-info">
+                    <span id="progressText">Soru 1 / 100</span>
+                    <span id="scoreText">Puan: 0</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="question-card" id="questionCard">
+                <div class="q-number" id="qNumber">SORU 1</div>
+                <div class="q-text" id="qText"></div>
+                <div class="options" id="options"></div>
+                <div class="feedback" id="feedback"></div>
+                <div class="btn-row">
+                    <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" style="display:none;">← Önceki</button>
+                    <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Sonraki →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="resultScreen" class="result-card">
+            <div class="score-circle">
+                <div class="big" id="finalScore">0</div>
+                <div class="small">/ 100</div>
+            </div>
+            <div class="result-title" id="resultTitle">Tebrikler!</div>
+            <div class="result-msg" id="resultMsg"></div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="num" id="correctCount">0</div>
+                    <div class="label">Doğru</div>
+                </div>
+                <div class="stat">
+                    <div class="num" id="wrongCount">0</div>
+                    <div class="label">Yanlış</div>
+                </div>
+                <div class="stat">
+                    <div class="num" id="percent">0%</div>
+                    <div class="label">Başarı</div>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="restartQuiz()" style="max-width:260px;margin:0 auto;">
+                Tekrar Çöz 🔄
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            // ========== 1-20: En iyi arkadaş / Tanıtım ==========
+            {
+                q: '"Mein bester Freund heißt …" cümlesinde boşluğa ne gelir?',
+                options: ["Max", "max", "der Max", "Maxen"],
+                answer: 0
+            },
+            {
+                q: '"En iyi arkadaşımın adı Ali." Almancası nedir?',
+                options: ["Mein bester Freund heißt Ali.", "Mein beste Freund heißt Ali.", "Meine beste Freund heißt Ali.", "Mein besten Freund heißt Ali."],
+                answer: 0
+            },
+            {
+                q: '"En iyi kız arkadaşım" nasıl denir?',
+                options: ["meine beste Freundin", "mein bester Freund", "meine besten Freundin", "mein beste Freundin"],
+                answer: 0
+            },
+            {
+                q: '"Wie alt ist dein bester Freund?" sorusunun cevabı hangisidir?',
+                options: ["Er ist dreizehn Jahre alt.", "Sie ist dreizehn Jahre alt.", "Er hat dreizehn Jahre.", "Er ist dreizehn alt."],
+                answer: 0
+            },
+            {
+                q: '"Wo wohnt deine beste Freundin?" sorusu ne anlama gelir?',
+                options: ["En iyi kız arkadaşın nerede yaşıyor?", "En iyi arkadaşın kaç yaşında?", "En iyi arkadaşın neye benziyor?", "En iyi arkadaşın nereden geliyor?"],
+                answer: 0
+            },
+            {
+                q: '"Sie kommt aus Ankara." cümlesinin Türkçesi nedir?',
+                options: ["O Ankara'dan geliyor.", "O Ankara'da yaşıyor.", "O Ankara'ya gidiyor.", "O Ankara'yı seviyor."],
+                answer: 0
+            },
+            {
+                q: '"Mein bester Freund wohnt in …" boşluğa uygun olan hangisidir?',
+                options: ["Istanbul", "der Istanbul", "Istanbuls", "Istanbulen"],
+                answer: 0
+            },
+            {
+                q: '"Wer ist dein bester Freund?" sorusuna en uygun cevap hangisidir?',
+                options: ["Mein bester Freund heißt Can.", "Mein bester Freund ist gut.", "Mein bester Freund mag Fußball.", "Mein bester Freund hat braune Haare."],
+                answer: 0
+            },
+            {
+                q: '"En iyi arkadaşım 13 yaşında." doğru çeviri hangisidir?',
+                options: ["Mein bester Freund ist 13 Jahre alt.", "Mein bester Freund hat 13 Jahre.", "Mein bester Freund ist 13 alt.", "Mein beste Freund ist 13 Jahre alt."],
+                answer: 0
+            },
+            {
+                q: '"Sie wohnt in Izmir." cümlesinde "Sie" kime işaret eder?',
+                options: ["Kız arkadaşa", "Erkek arkadaşa", "Anne", "Baba"],
+                answer: 0
+            },
+            {
+                q: '"Mein bester Freund" ifadesinde "bester" neden "e" alıyor?',
+                options: ["Maskulin + Nominativ olduğu için", "Feminin olduğu için", "Plural olduğu için", "Akkusativ olduğu için"],
+                answer: 0
+            },
+            {
+                q: '"Meine beste Freundin" ifadesinde "beste" neden "e" alıyor?',
+                options: ["Feminin + Nominativ olduğu için", "Maskulin olduğu için", "Neutrum olduğu için", "Dativ olduğu için"],
+                answer: 0
+            },
+            {
+                q: '"Er kommt aus Deutschland." cümlesinin Türkçesi nedir?',
+                options: ["O Almanya'dan geliyor.", "O Almanya'da yaşıyor.", "O Almanya'ya gidiyor.", "O Almanya'yı seviyor."],
+                answer: 0
+            },
+            {
+                q: '"Wie heißt deine beste Freundin?" sorusunun cevabı hangisidir?',
+                options: ["Sie heißt Ayşe.", "Er heißt Ayşe.", "Sie ist Ayşe.", "Sie hat Ayşe."],
+                answer: 0
+            },
+            {
+                q: '"Mein bester Freund ist sehr nett." cümlesinde "nett" ne anlama gelir?',
+                options: ["nazik / sevimli", "uzun", "kısa", "güçlü"],
+                answer: 0
+            },
+            {
+                q: '"Wir sind beste Freunde." cümlesinin Türkçesi nedir?',
+                options: ["Biz en iyi arkadaşız.", "Biz iyi arkadaşız.", "Biz arkadaşız.", "Biz en iyi kardeşiz."],
+                answer: 0
+            },
+            {
+                q: '"Seit wann seid ihr Freunde?" sorusu ne sorar?',
+                options: ["Ne zamandan beri arkadaşsınız?", "Nerede arkadaş oldunuz?", "Neden arkadaş oldunuz?", "Kaç yaşındasınız?"],
+                answer: 0
+            },
+            {
+                q: '"Wir kennen uns seit der Grundschule." cümlesinin anlamı nedir?',
+                options: ["Birbirimizi ilkokuldan beri tanıyoruz.", "Birbirimizi liseden beri tanıyoruz.", "Birbirimizi dün tanıdık.", "Birbirimizi tanımıyoruz."],
+                answer: 0
+            },
+            {
+                q: '"Mein bester Freund ist auch mein Nachbar." cümlesinde "Nachbar" ne demektir?',
+                options: ["komşu", "kardeş", "kuzen", "öğretmen"],
+                answer: 0
+            },
+            {
+                q: '"Sie ist meine beste Freundin seit zwei Jahren." cümlesinin doğru çevirisi hangisidir?',
+                options: ["O iki yıldır en iyi kız arkadaşımdır.", "O iki yaşında en iyi kız arkadaşımdır.", "O iki gün önce en iyi kız arkadaşı oldu.", "O iki yıl sonra en iyi kız arkadaşım olacak."],
+                answer: 0
+            },
+
+            // ========== 21-45: Fiziksel görünüm ==========
+            {
+                q: '"Wie sieht dein bester Freund aus?" sorusu ne anlama gelir?',
+                options: ["En iyi arkadaşın neye benziyor?", "En iyi arkadaşın nerede yaşıyor?", "En iyi arkadaşın kaç yaşında?", "En iyi arkadaşın neyi seviyor?"],
+                answer: 0
+            },
+            {
+                q: '"Seine Haare sind kurz und schwarz." cümlesinin Türkçesi nedir?',
+                options: ["Onun saçları kısa ve siyahtır.", "Onun gözleri kısa ve siyahtır.", "Onun boyu kısa ve siyahtır.", "Onun burnu kısa ve siyahtır."],
+                answer: 0
+            },
+            {
+                q: '"Ihre Augen sind blau." cümlesinde "Ihre" kime aittir?',
+                options: ["Kız arkadaşa", "Erkek arkadaşa", "Bana", "Sana"],
+                answer: 0
+            },
+            {
+                q: '"Er hat lange Haare." cümlesinin doğru Türkçesi nedir?',
+                options: ["Onun uzun saçları var.", "O uzun saçlıdır.", "Her ikisi de doğru", "Hiçbiri"],
+                answer: 2
+            },
+            {
+                q: '"Sie ist mittelgroß." ifadesi ne anlama gelir?',
+                options: ["O orta boyludur.", "O çok uzundur.", "O çok kısadır.", "O şişmandır."],
+                answer: 0
+            },
+            {
+                q: '"Er ist groß und schlank." cümlesinin Türkçesi nedir?',
+                options: ["O uzun ve zayıftır.", "O kısa ve şişmandır.", "O orta boylu ve güçlüdür.", "O uzun ve şişmandır."],
+                answer: 0
+            },
+            {
+                q: '"Sie hat braune Augen." doğru mu?',
+                options: ["Evet, doğru", "Hayır, \"braune\" yerine \"braun\" olmalı", "Hayır, \"Augen\" yerine \"Auge\" olmalı", "Hayır, cümle tamamen yanlış"],
+                answer: 0
+            },
+            {
+                q: '"Seine Haare sind blond." cümlesinde "blond" ne demektir?',
+                options: ["sarı (saç)", "siyah", "kahverengi", "kırmızı"],
+                answer: 0
+            },
+            {
+                q: '"Sie trägt eine Brille." ifadesinin anlamı nedir?',
+                options: ["O gözlük takıyor.", "O şapka takıyor.", "O küpe takıyor.", "O saat takıyor."],
+                answer: 0
+            },
+            {
+                q: '"Er ist sportlich." ne anlama gelir?',
+                options: ["O sportif / atletik görünümlüdür.", "O tembeldir.", "O üzgündür.", "O yorgundur."],
+                answer: 0
+            },
+            {
+                q: '"Wie sind seine Haare?" sorusuna uygun cevap hangisidir?',
+                options: ["Seine Haare sind kurz und braun.", "Seine Haare ist kurz und braun.", "Sein Haar sind kurz und braun.", "Seine Haare hat kurz und braun."],
+                answer: 0
+            },
+            {
+                q: '"Sie ist nicht so groß." cümlesinin Türkçesi nedir?',
+                options: ["O o kadar uzun değil.", "O çok uzundur.", "O hiç uzun değildir.", "O ortalamanın üstündedir."],
+                answer: 0
+            },
+            {
+                q: '"Er hat kurze Haare und grüne Augen." cümlesinde kaç özellik belirtilmiştir?',
+                options: ["2", "1", "3", "4"],
+                answer: 0
+            },
+            {
+                q: '"Ihre Haare sind lang und lockig." ifadesinde "lockig" ne demektir?',
+                options: ["kıvırcık", "düz", "kısa", "siyah"],
+                answer: 0
+            },
+            {
+                q: '"Er ist vollschlank." kibarca ne anlama gelir?',
+                options: ["O dolgun / tombuldur.", "O çok zayıftır.", "O çok uzundur.", "O çok kısadır."],
+                answer: 0
+            },
+            {
+                q: '"Sie hat schwarze Haare und braune Augen." doğru sıralama hangisidir?',
+                options: ["saç rengi + göz rengi", "göz rengi + saç rengi", "boy + saç", "göz + boy"],
+                answer: 0
+            },
+            {
+                q: '"Wie sieht sie aus?" sorusuna en uygun cevap hangisidir?',
+                options: ["Sie ist mittelgroß und hat lange Haare.", "Sie wohnt in Ankara.", "Sie ist 13 Jahre alt.", "Sie mag Pizza."],
+                answer: 0
+            },
+            {
+                q: '"Seine Augen sind grau." cümlesinde "grau" ne demektir?',
+                options: ["gri", "mavi", "yeşil", "kahverengi"],
+                answer: 0
+            },
+            {
+                q: '"Er trägt eine Brille und hat kurze Haare." cümlesinin Türkçesi nedir?',
+                options: ["O gözlük takıyor ve kısa saçlıdır.", "O şapka takıyor ve uzun saçlıdır.", "O gözlük takmıyor ve kısa saçlıdır.", "O gözlük takıyor ve uzun saçlıdır."],
+                answer: 0
+            },
+            {
+                q: '"Sie ist klein und zierlich." ifadesinde "zierlich" ne anlama gelir?',
+                options: ["narin / ince yapılı", "çok uzun", "çok şişman", "çok güçlü"],
+                answer: 0
+            },
+            {
+                q: '"Er hat einen Bart." ne demektir?',
+                options: ["Onun sakalı var.", "Onun bıyığı var.", "Onun gözlüğü var.", "Onun şapkası var."],
+                answer: 0
+            },
+            {
+                q: '"Ihre Haare sind rot." cümlesinde "rot" ne anlama gelir?',
+                options: ["kızıl / kırmızı", "sarı", "siyah", "kahverengi"],
+                answer: 0
+            },
+            {
+                q: '"Er ist groß, schlank und sportlich." kaç özellik sayılmıştır?',
+                options: ["3", "2", "4", "1"],
+                answer: 0
+            },
+            {
+                q: '"Sie hat schöne Augen." cümlesinin Türkçesi nedir?',
+                options: ["Onun güzel gözleri var.", "O güzel gözlüdür.", "Her ikisi de doğru", "Hiçbiri"],
+                answer: 2
+            },
+            {
+                q: '"Wie sind ihre Haare?" sorusuna cevap verirken hangi zamir kullanılır?',
+                options: ["ihre", "seine", "meine", "deine"],
+                answer: 0
+            },
+
+            // ========== 46-70: Karakter özellikleri ==========
+            {
+                q: '"Wie ist dein bester Freund?" sorusu ne sorar?',
+                options: ["En iyi arkadaşın nasıl biridir? (karakter)", "En iyi arkadaşın nerede yaşıyor?", "En iyi arkadaşın kaç yaşında?", "En iyi arkadaşın neye benziyor?"],
+                answer: 0
+            },
+            {
+                q: '"Sie ist hilfsbereit." ne anlama gelir?',
+                options: ["O yardımseverdir.", "O tembeldir.", "O üzgündür.", "O yorgundur."],
+                answer: 0
+            },
+            {
+                q: '"Er ist ehrlich." kelimesinin Türkçesi nedir?',
+                options: ["dürüst", "yalancı", "korkak", "öfkeli"],
+                answer: 0
+            },
+            {
+                q: '"Sie ist schüchtern." ne demektir?',
+                options: ["O utangaçtır.", "O çok konuşkandır.", "O çok cesurdur.", "O çok gürültülüdür."],
+                answer: 0
+            },
+            {
+                q: '"Er ist sehr aktiv." ifadesinin anlamı nedir?',
+                options: ["O çok aktiftir / hareketlidir.", "O çok tembeldir.", "O çok sessizdir.", "O çok üzgündür."],
+                answer: 0
+            },
+            {
+                q: '"Sie ist geduldig." ne anlama gelir?',
+                options: ["O sabırlıdır.", "O sabırsızdır.", "O öfkelidir.", "O üzgündür."],
+                answer: 0
+            },
+            {
+                q: '"Er ist immer nett." cümlesinin Türkçesi nedir?',
+                options: ["O her zaman naziktir / sevimlidir.", "O hiç nazik değildir.", "O bazen naziktir.", "O nadiren naziktir."],
+                answer: 0
+            },
+            {
+                q: '"Warum ist er dein bester Freund?" sorusuna uygun cevap hangisidir?',
+                options: ["Weil er hilfsbereit und ehrlich ist.", "Weil er in Ankara wohnt.", "Weil er 13 Jahre alt ist.", "Weil er kurze Haare hat."],
+                answer: 0
+            },
+            {
+                q: '"Sie ist nicht schüchtern, sie ist sehr offen." cümlesinin anlamı nedir?',
+                options: ["O utangaç değil, çok açıktır.", "O utangaçtır, çok kapalıdır.", "O utangaçtır, çok açıktır.", "O utangaç değil, çok kapalıdır."],
+                answer: 0
+            },
+            {
+                q: '"Er ist lustig." ne demektir?',
+                options: ["O komik / eğlencelidir.", "O üzgündür.", "O öfkelidir.", "O yorgundur."],
+                answer: 0
+            },
+            {
+                q: '"Sie ist intelligent und fleißig." cümlesinde "fleißig" ne anlama gelir?',
+                options: ["çalışkan", "tembel", "aptal", "yavaş"],
+                answer: 0
+            },
+            {
+                q: '"Er ist manchmal ein bisschen faul." ifadesinin Türkçesi nedir?',
+                options: ["O bazen biraz tembeldir.", "O her zaman tembeldir.", "O hiç tembel değildir.", "O çok çalışkandır."],
+                answer: 0
+            },
+            {
+                q: '"Sie ist sehr freundlich." ne anlama gelir?',
+                options: ["O çok cana yakındır / dost canlısıdır.", "O çok soğuktur.", "O çok öfkelidir.", "O çok üzgündür."],
+                answer: 0
+            },
+            {
+                q: '"Er ist mutig." kelimesinin Türkçesi nedir?',
+                options: ["cesur", "korkak", "ütangaç", "tembel"],
+                answer: 0
+            },
+            {
+                q: '"Sie ist kreativ." ne demektir?',
+                options: ["O yaratıcıdır.", "O sıkıcıdır.", "O tembeldir.", "O üzgündür."],
+                answer: 0
+            },
+            {
+                q: '"Mein bester Freund ist ehrlich und hilfsbereit." cümlesinde hangi özellikler belirtilmiştir?',
+                options: ["dürüst ve yardımsever", "uzun ve zayıf", "komik ve tembel", "utangaç ve sessiz"],
+                answer: 0
+            },
+            {
+                q: '"Sie ist nicht faul, sie ist fleißig." cümlesinin anlamı nedir?',
+                options: ["O tembel değil, çalışkandır.", "O tembeldir, çalışkan değildir.", "O tembeldir, çalışkandır.", "O tembel değil, tembeldir."],
+                answer: 0
+            },
+            {
+                q: '"Er ist ein guter Zuhörer." ifadesi ne anlama gelir?',
+                options: ["O iyi bir dinleyicidir.", "O iyi bir konuşmacıdır.", "O iyi bir şarkıcıdır.", "O iyi bir dansçıdır."],
+                answer: 0
+            },
+            {
+                q: '"Sie ist immer positiv." ne demektir?',
+                options: ["O her zaman olumludur / pozitiftir.", "O her zaman olumsuzdur.", "O bazen olumludur.", "O hiç olumlu değildir."],
+                answer: 0
+            },
+            {
+                q: '"Er ist zuverlässig." kelimesinin Türkçesi nedir?',
+                options: ["güvenilir", "güvenilmez", "unutkan", "dikkatsiz"],
+                answer: 0
+            },
+            {
+                q: '"Sie ist sehr sozial." ne anlama gelir?',
+                options: ["O çok sosyaldır.", "O çok yalnızdır.", "O çok utangaçtır.", "O çok sessizdir."],
+                answer: 0
+            },
+            {
+                q: '"Mein bester Freund ist geduldig und lustig." cümlesinin Türkçesi nedir?',
+                options: ["En iyi arkadaşım sabırlı ve komiktir.", "En iyi arkadaşım sabırsız ve üzgündür.", "En iyi arkadaşım uzun ve zayıftır.", "En iyi arkadaşım utangaç ve sessizdir."],
+                answer: 0
+            },
+            {
+                q: '"Sie ist nicht eifersüchtig." ne demektir?',
+                options: ["O kıskanç değildir.", "O kıskançtır.", "O üzgündür.", "O öfkelidir."],
+                answer: 0
+            },
+            {
+                q: '"Er ist ein bisschen schüchtern, aber sehr nett." cümlesinin anlamı nedir?',
+                options: ["O biraz utangaçtır ama çok naziktir.", "O hiç utangaç değildir ve çok naziktir.", "O çok utangaçtır ve hiç nazik değildir.", "O biraz utangaçtır ve hiç nazik değildir."],
+                answer: 0
+            },
+            {
+                q: '"Welche Eigenschaft ist positiv?" sorusuna cevap hangisidir?',
+                options: ["hilfsbereit", "faul", "unfreundlich", "egoistisch"],
+                answer: 0
+            },
+
+            // ========== 71-100: Possessivpronomen + karma ==========
+            {
+                q: '"_____ bester Freund heißt Can." boşluğa ne gelir?',
+                options: ["Mein", "Meine", "Meinen", "Meiner"],
+                answer: 0
+            },
+            {
+                q: '"_____ beste Freundin wohnt in Izmir." boşluğa ne gelir?',
+                options: ["Meine", "Mein", "Meinen", "Meiner"],
+                answer: 0
+            },
+            {
+                q: '"Das ist _____ Freund." (erkek arkadaş için)',
+                options: ["mein", "meine", "meinen", "meiner"],
+                answer: 0
+            },
+            {
+                q: '"Das ist _____ Freundin." (kız arkadaş için)',
+                options: ["meine", "mein", "meinen", "meiner"],
+                answer: 0
+            },
+            {
+                q: '"_____ Haare sind kurz." (onun - erkek)',
+                options: ["Seine", "Ihre", "Meine", "Deine"],
+                answer: 0
+            },
+            {
+                q: '"_____ Augen sind blau." (onun - kız)',
+                options: ["Ihre", "Seine", "Meine", "Deine"],
+                answer: 0
+            },
+            {
+                q: '"Wie ist _____ bester Freund?" (senin)',
+                options: ["dein", "deine", "deinen", "deiner"],
+                answer: 0
+            },
+            {
+                q: '"Wie ist _____ beste Freundin?" (senin)',
+                options: ["deine", "dein", "deinen", "deiner"],
+                answer: 0
+            },
+            {
+                q: '"_____ Name ist Elif." (onun - kız)',
+                options: ["Ihr", "Sein", "Mein", "Dein"],
+                answer: 0
+            },
+            {
+                q: '"_____ Name ist Mehmet." (onun - erkek)',
+                options: ["Sein", "Ihr", "Mein", "Dein"],
+                answer: 0
+            },
+            {
+                q: '"Ich mag _____ besten Freund." cümlesinde "besten" neden "en" alıyor?',
+                options: ["Akkusativ + maskulin olduğu için", "Nominativ olduğu için", "Dativ olduğu için", "Feminin olduğu için"],
+                answer: 0
+            },
+            {
+                q: '"Sie ist _____ beste Freundin." boşluğa ne gelir?',
+                options: ["meine", "mein", "meinen", "meiner"],
+                answer: 0
+            },
+            {
+                q: '"Er ist _____ bester Freund." boşluğa ne gelir?',
+                options: ["mein", "meine", "meinen", "meiner"],
+                answer: 0
+            },
+            {
+                q: '"_____ Haare sind lang und blond." (benim)',
+                options: ["Meine", "Mein", "Meinen", "Meiner"],
+                answer: 0
+            },
+            {
+                q: '"_____ Augen sind grün." (senin)',
+                options: ["Deine", "Dein", "Deinen", "Deiner"],
+                answer: 0
+            },
+            {
+                q: '"Wo wohnt _____ beste Freundin?" (senin)',
+                options: ["deine", "dein", "deinen", "deiner"],
+                answer: 0
+            },
+            {
+                q: '"Wie alt ist _____ bester Freund?" (senin)',
+                options: ["dein", "deine", "deinen", "deiner"],
+                answer: 0
+            },
+            {
+                q: '"_____ bester Freund ist sehr lustig." (benim)',
+                options: ["Mein", "Meine", "Meinen", "Meiner"],
+                answer: 0
+            },
+            {
+                q: '"_____ beste Freundin ist hilfsbereit." (benim)',
+                options: ["Meine", "Mein", "Meinen", "Meiner"],
+                answer: 0
+            },
+            {
+                q: '"Er hat _____ Haare geschnitten." (kendi - erkek)',
+                options: ["seine", "ihre", "meine", "deine"],
+                answer: 0
+            },
+            {
+                q: '"Sie hat _____ Haare gefärbt." (kendi - kız)',
+                options: ["ihre", "seine", "meine", "deine"],
+                answer: 0
+            },
+            {
+                q: '"Das ist nicht _____ Freund, das ist _____ Bruder." boşluklara sırasıyla ne gelir?',
+                options: ["mein / mein", "meine / meine", "mein / meine", "meine / mein"],
+                answer: 0
+            },
+            {
+                q: '"_____ Freunde sind sehr nett." (benim - çoğul)',
+                options: ["Meine", "Mein", "Meinen", "Meiner"],
+                answer: 0
+            },
+            {
+                q: '"Wie sind _____ Freunde?" (senin - çoğul)',
+                options: ["deine", "dein", "deinen", "deiner"],
+                answer: 0
+            },
+            {
+                q: '"_____ bester Freund und _____ beste Freundin kommen aus der Türkei." boşluklara ne gelir?',
+                options: ["Mein / meine", "Meine / mein", "Mein / mein", "Meine / meine"],
+                answer: 0
+            },
+            {
+                q: '"Ich finde _____ besten Freund sehr sympathisch." cümlesinde doğru zamir hangisidir?',
+                options: ["meinen", "mein", "meine", "meiner"],
+                answer: 0
+            },
+            {
+                q: '"Sie spricht oft mit _____ besten Freundin." boşluğa ne gelir?',
+                options: ["ihrer", "ihren", "ihre", "ihr"],
+                answer: 0
+            },
+            {
+                q: '"Er spielt Fußball mit _____ besten Freund." boşluğa ne gelir?',
+                options: ["seinem", "seinen", "seine", "sein"],
+                answer: 0
+            },
+            {
+                q: '"_____ Freundin ist sehr kreativ und hilfsbereit." (benim)',
+                options: ["Meine", "Mein", "Meinen", "Meiner"],
+                answer: 0
+            },
+            {
+                q: 'Son soru: "Mein bester Freund ist ehrlich, hilfsbereit und immer nett. Er hat kurze braune Haare und grüne Augen." Bu cümlede kaç olumlu karakter özelliği vardır?',
+                options: ["3", "2", "4", "1"],
+                answer: 0
+            }
+        ];
+
+        let current = 0;
+        let score = 0;
+        let answers = new Array(questions.length).fill(null);
+        let answered = new Array(questions.length).fill(false);
+
+        function startQuiz() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('quizArea').style.display = 'block';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = questions[current];
+            document.getElementById('qNumber').textContent = `SORU ${current + 1}`;
+            document.getElementById('qText').textContent = q.q;
+            document.getElementById('progressText').textContent = `Soru ${current + 1} / ${questions.length}`;
+            document.getElementById('scoreText').textContent = `Puan: ${score}`;
+            document.getElementById('progressFill').style.width = `${((current) / questions.length) * 100}%`;
+
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+            const letters = ['A', 'B', 'C', 'D'];
+
+            q.options.forEach((opt, i) => {
+                const div = document.createElement('div');
+                div.className = 'option';
+                if (answers[current] === i) div.classList.add('selected');
+                if (answered[current]) {
+                    if (i === q.answer) div.classList.add('correct');
+                    else if (answers[current] === i && i !== q.answer) div.classList.add('wrong');
+                }
+                div.innerHTML = `<div class="option-letter">${letters[i]}</div><div>${opt}</div>`;
+                div.onclick = () => selectOption(i);
+                optionsDiv.appendChild(div);
+            });
+
+            const feedback = document.getElementById('feedback');
+            feedback.className = 'feedback';
+            feedback.style.display = 'none';
+
+            if (answered[current]) {
+                if (answers[current] === q.answer) {
+                    feedback.textContent = '✅ Doğru!';
+                    feedback.classList.add('show', 'correct');
+                } else {
+                    feedback.textContent = `❌ Yanlış. Doğru cevap: ${letters[q.answer]}) ${q.options[q.answer]}`;
+                    feedback.classList.add('show', 'wrong');
+                }
+            }
+
+            document.getElementById('prevBtn').style.display = current > 0 ? 'block' : 'none';
+            document.getElementById('nextBtn').disabled = !answered[current];
+            document.getElementById('nextBtn').textContent = current === questions.length - 1 ? 'Sonucu Gör →' : 'Sonraki →';
+        }
+
+        function selectOption(index) {
+            if (answered[current]) return;
+
+            answers[current] = index;
+            answered[current] = true;
+
+            if (index === questions[current].answer) {
+                score++;
+            }
+
+            showQuestion();
+        }
+
+        function nextQuestion() {
+            if (current < questions.length - 1) {
+                current++;
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function prevQuestion() {
+            if (current > 0) {
+                current--;
+                showQuestion();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('quizArea').style.display = 'none';
+            document.getElementById('resultScreen').classList.add('show');
+
+            const percent = Math.round((score / questions.length) * 100);
+            document.getElementById('finalScore').textContent = score;
+            document.getElementById('correctCount').textContent = score;
+            document.getElementById('wrongCount').textContent = questions.length - score;
+            document.getElementById('percent').textContent = percent + '%';
+
+            let title, msg;
+            if (percent >= 90) {
+                title = 'Harika! 🌟';
+                msg = 'Die Freundschaft ünitesini mükemmel şekilde biliyorsun!';
+            } else if (percent >= 75) {
+                title = 'Çok İyi! 👏';
+                msg = 'Güzel bir performans. Biraz daha tekrar ile tam puan alabilirsin.';
+            } else if (percent >= 50) {
+                title = 'İyi Gidiyorsun! 💪';
+                msg = 'Temel konular yerleşmiş. Eksik kaldığın yerleri tekrar et.';
+            } else {
+                title = 'Daha Çok Çalışmalısın 📚';
+                msg = 'Üniteyi tekrar gözden geçirip testi yeniden çözmeni öneririm.';
+            }
+            document.getElementById('resultTitle').textContent = title;
+            document.getElementById('resultMsg').textContent = msg;
+        }
+
+        function restartQuiz() {
+            current = 0;
+            score = 0;
+            answers = new Array(questions.length).fill(null);
+            answered = new Array(questions.length).fill(false);
+            document.getElementById('resultScreen').classList.remove('show');
+            document.getElementById('startScreen').style.display = 'block';
+            document.getElementById('quizArea').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
